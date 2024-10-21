@@ -13,6 +13,7 @@ weatherForm.addEventListener("submit", async (event) => {
   if (city) {
     try {
       const weatherData = await getweatherData(city);
+      displayweatherInfo(weatherData);
     } catch (error) {
       console.error(error);
       displayError(error);
@@ -84,7 +85,7 @@ function getweatherEmoji(weatherId) {
     case weatherId >= 801 && weatherId < 810:
       return "☁️";
     default:
-      return '❤️'
+      return "❤️";
   }
 }
 function displayError(message) {
